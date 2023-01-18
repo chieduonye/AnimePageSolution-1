@@ -4,7 +4,7 @@ In the project directory, you can run:
 
 # ⚙️ Installing and Running
 
-Install dependencies, set up `.env.local` and run Next.js development server on `http://localhost:3000`.
+Install dependencies, set up `.env.local` and run React.js development server on `http://localhost:3000`.
 
 ```bash
 # install dependencies
