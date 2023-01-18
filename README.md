@@ -10,8 +10,6 @@ Install dependencies, set up `.env.local` and run React.js development server on
 # install dependencies
 $ yarn install
 
-# rename .env.example to .env.local and feed your IEX Cloud api token
-
 # run server
 $ yarn start
 ```
