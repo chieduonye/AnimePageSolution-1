@@ -19,11 +19,11 @@ const GetAnimeData = () => {
     titleLength: number;
   }
   
-  const yearArray = Object.values(animeItems).map(function(animeItem: AnimeCardData) { return animeItem["year"]; });
-  const titleArray = Object.values(animeItems).map(function(animeItem: AnimeCardData) { return animeItem["title"]; });
+  const yearArray = Object.values(animeItems).sort(function(a, b) {return a.rank - b.rank}).map(function(animeItem: AnimeCardData) { return animeItem["year"]; });
+  const titleArray = Object.values(animeItems).sort(function(a, b) {return a.rank - b.rank}).map(function(animeItem: AnimeCardData) { return animeItem["title"]; });
   const InitialTitleLength = 1
  
-  // Extract year, titleLength and title keys into one Json
+  // Extract year, number of titles that year had as "titleLength", title, as the keys into one Json
   const mapArrays = (titleArray: Array<string>, yearArray: Array<number>, titleLe: number) => { 
     const animeData = []; 
     for(let i = 0; i < titleArray.length; i++){ 
@@ -39,7 +39,7 @@ const GetAnimeData = () => {
   
   const animeTempData = mapArrays(titleArray, yearArray, InitialTitleLength);
 
-  // aggregate all titles with the same year into one object
+  // aggregate all titles with the same year into one object, and account for it within "titleLength"
   const aggregateArray = (arr: Array<animeDataInterface>) => {
     return arr.reduce((acc: Array<animeDataInterface>, val) => {
       const index = acc.findIndex(obj => obj.year === val.year);
@@ -82,7 +82,7 @@ export const AnimeChart = () => {
     return (
     <>
       {/* <ResponsiveContainer width={100%} aspect {3} > */}
-      {/* ResponsieContainer not rendering */}
+      {/* ResponsiveContainer not rendering */}
       <div className={styles.caption}>
       <div className={styles.fullCaption}>
       <AreaChart width={1260} height={260} data={animeData}
