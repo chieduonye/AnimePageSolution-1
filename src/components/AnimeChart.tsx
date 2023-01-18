@@ -19,8 +19,8 @@ const GetAnimeData = () => {
     titleLength: number;
   }
   
-  const yearArray = Object.values(animeItems).sort(function(a, b) {return a.rank - b.rank}).map(function(animeItem: AnimeCardData) { return animeItem["year"]; });
-  const titleArray = Object.values(animeItems).sort(function(a, b) {return a.rank - b.rank}).map(function(animeItem: AnimeCardData) { return animeItem["title"]; });
+  const yearArray = Object.values(animeItems).sort(function(a, b) {return a.rank - b.rank}).slice(0, 20).map(function(animeItem: AnimeCardData) { return animeItem["year"]; });
+  const titleArray = Object.values(animeItems).sort(function(a, b) {return a.rank - b.rank}).slice(0, 20).map(function(animeItem: AnimeCardData) { return animeItem["title"]; });
   const InitialTitleLength = 1
  
   // Extract year, number of titles that year had as "titleLength", title, as the keys into one Json
