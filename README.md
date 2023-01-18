@@ -23,7 +23,7 @@ You will also see any lint errors in the console.
 
 # 🚀 About the project
 
-**Sponsorlytix_Anime** provides Anime information dashboard for Anime chart overview, release dates, latest dates and ratings.
+**Sponsorlytix_Anime** provides Anime information dashboard for Anime chart overview, release dates, latest dates and ratings for the top 20 ranked.
 
 Main technologies used:
 
