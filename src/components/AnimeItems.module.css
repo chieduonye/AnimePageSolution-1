@@ -158,6 +158,7 @@
  @media screen and (min-width< 570px) {
     .caption {
       width: 100%; 
+      overflow-x: scroll;
     }}
 
       @media screen and (max-width: 570px) {
